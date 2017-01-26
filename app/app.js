@@ -21,9 +21,14 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className={styles.app}>
+      <section className={styles.app}>
         <img src={this.state.photo.url} />
-      </div>
+        <section className="photo-metadata">
+          {this.state.photo.title}
+          {this.state.photo.description}
+          {this.state.photo.date}
+        </section>
+      </section>
     );
   }
 }
