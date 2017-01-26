@@ -2,4 +2,4 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./app.js";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App primaryPhotoId="32377248835" />, document.getElementById("root"));

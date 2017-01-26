@@ -12,9 +12,8 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("/api/photo").then((response) => {
-      var photos = response.json().then((photos) => {
-        var photo = photos[0];
+    fetch("/api/photos/" + this.props.primaryPhotoId).then((response) => {
+      response.json().then((photo) => {
         this.setState({
           photo: {
             url: "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg"
