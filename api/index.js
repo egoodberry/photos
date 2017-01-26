@@ -1,5 +1,6 @@
 const request = require("request");
 const routes = require("express").Router();
+const Photo = require("../models/photo");
 
 const baseUrl = "https://api.flickr.com/services/rest";
 
@@ -26,7 +27,8 @@ routes.get("/photos/:id", (req, res) => {
           "&format=json&nojsoncallback=1",
     json: true
   }, (error, response, body) => {
-    res.json(response.body.photo);
+    const photo = new Photo(response.body.photo);
+    res.json(photo.toJson());
   });
 });
 
