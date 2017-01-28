@@ -4,9 +4,9 @@ const Photo = require("../models/photo");
 
 
 class PhotoRepository {
-  static search(params) {
+  static search(params, callback) {
     this.makeRequest("flickr.photos.search", params, (data) => {
-      const photos = data.photos.map((photo) => new Photo(photo));
+      const photos = data.photos.photo.map((photo) => new Photo(photo));
       callback(photos);
     });
   }

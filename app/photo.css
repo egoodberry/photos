@@ -1,2 +1,14 @@
-.photo {
+a.browse {
+  display: block;
+}
+.image {
+  display: block;
+  margin: 0 auto;
+}
+.metadata {
+}
+.title {
+  font-style: italic;
+}
+.date {
 }

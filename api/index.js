@@ -3,7 +3,7 @@ const PhotoRepository = require("../services/photo-repository");
 
 routes.get("/photos", (req, res) => {
   PhotoRepository.search({ tags: "featured" }, (photos) => {
-    res.json(photos.toJson());
+    res.json(photos.map((photo) => photo.toJson()));
   });
 });
 

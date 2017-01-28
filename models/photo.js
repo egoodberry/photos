@@ -1,4 +1,5 @@
-var dateFormat = require('dateformat');
+var dateFormat = require("dateformat");
+var slug = require("slug");
 
 class Photo {
   constructor(data) {
@@ -6,26 +7,42 @@ class Photo {
     this.farm = data.farm;
     this.server = data.server;
     this.secret = data.secret;
-    this.datePosted = new Date(data.dates.posted * 1000);
-    this.title = data.title._content;
-    this.description = data.descriptio;
+    if (data.dates) {
+      this.datePosted = new Date(data.dates.posted * 1000);
+    }
+    if (typeof data.title === "object") {
+      this.title = data.title._content;
+    }
+    else {
+      this.title = data.title;
+    }
   }
 
   toJson() {
     return {
-      url: this.url(),
-      date: this.date(),
-      title: this.title,
-      description: this.description
+      id: this.id,
+      slug: this.slug,
+      url: this.url,
+      date: this.date,
+      title: this.title
     };
   }
 
-  url() {
+  get slug() {
+    return slug(this.title, { lower: true });
+  }
+
+  get url() {
     return `https://farm${this.farm}.staticflickr.com/${this.server}/${this.id}_${this.secret}.jpg`;
   }
 
-  date() {
-    return dateFormat(this.datePosted, "mmmm yyyy");
+  get date() {
+    if (this.datePosted) {
+      return dateFormat(this.datePosted, "mmmm yyyy");
+    }
+    else {
+      return "";
+    }
   }
 }
 
