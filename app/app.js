@@ -1,34 +1,11 @@
 import React from "react";
 import styles from "./app.css";
-import "whatwg-fetch";
+import Photo from "./photo.js";
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      photo: {}
-    };
-  }
-
-  componentDidMount() {
-    fetch("/api/photos/" + this.props.primaryPhotoId).then((response) => {
-      response.json().then((photo) => {
-        this.setState({ photo: photo });
-      });
-    })
-  }
-
   render() {
     return (
-      <section className={styles.app}>
-        <img src={this.state.photo.url} />
-        <section className="photo-metadata">
-          {this.state.photo.title}
-          {this.state.photo.description}
-          {this.state.photo.date}
-        </section>
-      </section>
+      <Photo id={this.props.primaryPhotoId} />
     );
   }
 }
