@@ -39,6 +39,7 @@
     "jsdom": "^6.5.1",
     "json-loader": "^0.5.3",
     "postcss-loader": "^0.6.0",
+    "querystring": "^0.2.0",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "request": "^2.79.0",
