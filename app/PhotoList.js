@@ -23,9 +23,9 @@ export default class PhotoList extends React.Component {
       <section>
         {
           this.state.photos.map((photo) => {
-            return <a href={`/photos/${photo.id}/${photo.slug}`}>
-                <img src={photo.url} key={photo.id} />
-              </a>
+            return <a href={`/photos/${photo.id}/${photo.slug}`} key={photo.id}>
+              <img src={photo.url} />
+            </a>
           })
         }
       </section>
