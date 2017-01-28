@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { Router, Route, browserHistory } from "react-router";
 import PhotoList from "./PhotoList.js";
 import Photo from "./Photo.js";
-import styles from "./index.css";
 
 const Home = React.createClass({
   render: function() {
