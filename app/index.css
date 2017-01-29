@@ -1,4 +1,11 @@
 body {
   background: #2f2f2f;
   color: #fff;
+  font-family: "Ek Mukta", sans-serif;
+}
+a {
+  color: #fff;
+}
+h1 a {
+  text-decoration: none;
 }

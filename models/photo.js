@@ -33,7 +33,7 @@ class Photo {
   }
 
   get url() {
-    return `https://farm${this.farm}.staticflickr.com/${this.server}/${this.id}_${this.secret}.jpg`;
+    return `https://farm${this.farm}.staticflickr.com/${this.server}/${this.id}_${this.secret}_b.jpg`;
   }
 
   get date() {

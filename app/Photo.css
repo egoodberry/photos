@@ -1,9 +1,14 @@
 a.browse {
   display: block;
 }
+.photo {
+}
 .image {
-  display: block;
-  margin: 0 auto;
+  min-height: 400px;
+  height: 90vh;
+  max-height: 1020px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .metadata {
 }

@@ -27,15 +27,18 @@ export default class Photo extends React.Component {
           Browse
         </a>
 
-        <img src={this.state.photo.url} className={styles.image} />
+        <section className={styles.photo}>
+          <div className={styles.image} style={{ backgroundImage: `url(${this.state.photo.url})` }}>
+          </div>
 
-        <section className={styles.metadata}>
-          <span className={styles.title}>
-            {this.state.photo.title},&nbsp;
-          </span>
-          <span className={styles.date}>
-            {this.state.photo.date}
-          </span>
+          <section className={styles.metadata}>
+            <span className={styles.title}>
+              {this.state.photo.title},&nbsp;
+            </span>
+            <span className={styles.date}>
+              {this.state.photo.date}
+            </span>
+          </section>
         </section>
 
       </section>
