@@ -2,6 +2,8 @@ a.browse {
   display: block;
 }
 .photo {
+  width: 90vh;
+  margin: 0 auto;
 }
 .image {
   min-height: 400px;
@@ -16,4 +18,5 @@ a.browse {
   font-style: italic;
 }
 .date {
+  margin-left: 3px;
 }

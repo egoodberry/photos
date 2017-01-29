@@ -22,7 +22,8 @@ class Photo {
     return {
       id: this.id,
       slug: this.slug,
-      url: this.url,
+      url: this.fullUrl,
+      thumbnailUrl: this.thumbnailUrl,
       date: this.date,
       title: this.title
     };
@@ -32,10 +33,6 @@ class Photo {
     return slug(this.title, { lower: true });
   }
 
-  get url() {
-    return `https://farm${this.farm}.staticflickr.com/${this.server}/${this.id}_${this.secret}_b.jpg`;
-  }
-
   get date() {
     if (this.datePosted) {
       return dateFormat(this.datePosted, "mmmm yyyy");
@@ -43,6 +40,18 @@ class Photo {
     else {
       return "";
     }
+  }
+
+  get fullUrl() {
+    return this.url("b");
+  }
+
+  get thumbnailUrl() {
+    return this.url("n");
+  }
+
+  url(size) {
+    return `https://farm${this.farm}.staticflickr.com/${this.server}/${this.id}_${this.secret}_${size}.jpg`;
   }
 }
 
